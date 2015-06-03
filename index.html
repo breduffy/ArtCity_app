@@ -22,6 +22,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+    <!-- Handlebars install -->
+    <script src="bower_components/handlebars/handlebars.js"></script>
+
   </head><!-- end head -->
 
 
@@ -249,6 +252,21 @@
   <div id= "art-images" class="animatedScroll col-xs-12 backgroundPrimary-gray textSecondary-black padding-xl">
   <h2>Look at all this sweet art!</h2>
     <div id="art-images-display">
+
+    <!--- your template goes here -->
+    <script id="artwork-index" type="text/x-handlebars-template">
+         {{#each artworks}}
+            <div class= "col-xs-12 col-sm-6 col-md-4">
+                <!--<img class="artwork" src={{url}}/>-->
+                <h2>{{title}}</h2>
+                <h4>{{artist}}</h4>
+                <p>{{venue}}</p>
+                <p>{{neighborhoods}}</p>
+                <p>{{city}}</p>
+                <p>{{description}}</p>
+            </div>
+            {{/each}}
+    </script>
 
     </div>
 
