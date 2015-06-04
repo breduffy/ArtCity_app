@@ -51,22 +51,46 @@
 
               <!-- Form Fields -->
               <div class="form-group">
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Title">
+                  <input name="title" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Title">
 
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Artist">
+                  <input name="artist" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Artist">
 
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Venue*">
+                  <input name="venue" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Venue*">
 
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Neighborhood">
+                  <input name="neighborhood" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Neighborhood">
 
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="City*">
+                  <input name="street" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Street*">
 
-                  <input name="firstname" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Description">
+                  <input name="city" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="City">
+
+                  <input name="description" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Description">
+
+
+                  <div class="input-group">
+                    <span id="upload-art-from-computer" class="input-group-btn">
+                      <span class="btn btn-primary btn-file pull-left backgroundPrimary-gray textPrimary-black ">
+                        Upload Image From Computer* <input type="file" multiple>
+                      </span>
+                    </span>
+                    <input type="text" class="form-control" readonly>
+                  </div>
+
+
+
               </div>
 
               <h2>*Required fields</h2>
 
-              <button type="button" data-toggle="modal" data-target="" id="form-button-upload-art" class="textPrimary-white backgroundSecondary-color js-signupform-button"> Upload Art</button>
+              <!-- <div class="col-lg-6 col-sm-6 col-12">
+                <span id="upload-art-from-computer" class="file-input btn btn-primary btn-file textPrimary-white pull-right backgroundSecondary-color">
+                   Upload Image&hellip; <input type="file" multiple>
+                </span>
+              </div> -->
+
+
+              <!-- <button type="button" data-toggle="modal" data-target="" id="form-button-upload-art" class="textPrimary-white backgroundSecondary-color js-signupform-button"> Upload Art</button> -->
+
+
 
               <button type="button" data-toggle="modal" data-target="" id="form-button-submit-art" class="textPrimary-white pull-right backgroundSecondary-color js-signupform-button"> Submit your art </button>
 
@@ -257,7 +281,7 @@
     <script id="artwork-index" type="text/x-handlebars-template">
          {{#each artworks}}
             <div class= "col-xs-12 col-sm-6 col-md-4">
-                <img class="artwork" src={{"https://s3.amazonaws.com/bostonartgallery/medium/#{object.id}/#{object.image_file_name}"}}/>
+                // <img class="artwork" src={{"https://s3.amazonaws.com/bostonartgallery/medium/#{object.id}/#{object.image_file_name}"}}/>
                 <h2>{{title}}</h2>
                 <h4>{{artist}}</h4>
                 <p>{{venue}}</p>

@@ -83,7 +83,7 @@ button {
 #hero {
     background-image: url("../images/Boston_PublicArt_1_sm2.png");
     height: 380px;
-    background-size:   cover;                      /* <------ */
+    background-size:   cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -101,6 +101,33 @@ button {
   background-color: #f40e4c;
 }
 
+/*File Upload Input*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+.input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+
+.input-group-btn{
+    border: 0px solid;
+}
 
 
 /*Colors*/
