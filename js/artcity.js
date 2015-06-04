@@ -12,6 +12,10 @@ $(document).ready(function(){
     // });
 
 
+  //Get Bootstrap dropdowns to work
+  $('.dropdown-toggle').dropdown()
+
+
   //Show modal to upload art
   $('#uploadArt').on('shown.bs.modal', function () {
     $('#myInput').focus()
@@ -22,6 +26,42 @@ $(document).ready(function(){
   $('#hero-button').click(function() {
     $('html, body').animate({scrollTop: $("#filters").offset().top}, 2000);
   });
+
+  //FIXME: Try to get value of dropdown selector for cities
+  // Still needs to store the value
+  // var chooseCity;
+  $('a').click(function(){
+      var chooseCity = $(this).text();
+      alert(chooseCity);
+    });
+
+
+  //FIXME: Attempt to make filtering by attribute
+  // var $results=$('.result').text(function(){
+  //       /* swap text with catgories to see results better */
+  //       return $(this).data('category')
+  //   })
+  //   var $checks=$(':checkbox[name^=fl]').change(function(){
+  //       var $checked=$checks.filter(':checked');
+  //       /* show all when nothing checked*/
+  //       if(!$checked.length){
+  //           $results.show();
+  //           return;
+  //       }
+  //       /* create array of checked values */
+  //       var checkedVals= $.map($checked, function(el){
+  //           return el.value
+  //       });
+  //       /* hide all results, then filter for matches */
+  //       $results.hide().filter(function(){
+  //           var artworks=$(this).data('category').split(' ');
+  //           var checkMatches=$.grep(checkedVals, function(val){
+  //               return $.inArray(val, artworks) >-1;
+  //           });
+  //           return checkMatches.length === checkedVals.length;
+  //        /* show resultas that match all checkboxes */
+  //     }).show();
+
 
 
 
@@ -51,11 +91,14 @@ $(document).ready(function(){
 
     //reaching out to a database and grabbing the artwork info and then pushing into html template
     //taking Json(a way of storing data) and pulling it into an array
+
+    //attempt to make it searchable by city by changing boston to #{}?
     var getArtworks = function(){
       $.get( "http://localhost:3000/venues/artwork?city=boston").done(function(response){
         _renderArtworks(response);
       });
     };
+
 
   //printing the data
     var _renderArtworks = function(artworks){
@@ -65,10 +108,10 @@ $(document).ready(function(){
       var templatingFunction = Handlebars.compile($('#artwork-index').html());
 
       //the first characters is a key, the second is the value
-      var result =templatingFunction({
+      var result = templatingFunction({
         artworks: artworks[0].artworks
       });
-      debugger;
+
       $('#art-images-display').html(result);//.html includes tags...getter and a setter
       // your code ends here
 
@@ -84,6 +127,8 @@ $(document).ready(function(){
     $("#filter-city-button").click(function(){
       artworks.indexArtworks();
     });
+
+  //END HANDLEBARS TEMPLATE
 
 
 
