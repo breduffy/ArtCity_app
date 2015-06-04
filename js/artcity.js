@@ -27,6 +27,28 @@ $(document).ready(function(){
     $('html, body').animate({scrollTop: $("#filters").offset().top}, 2000);
   });
 
+  //Get dropdown button to save selection in the button
+   $("#chooseCity-dropdown-menu").on('click', 'li a', function(){
+      $(".btn:first-child").text($(this).text());
+      $(".btn:first-child").val($(this).text());
+      // $(".btn:first-child").css("background-color", "backgroundSecondary-color");
+   });
+
+   // FIXME: On click of checkbox, get the value of the checkbox
+   // Create a JSON Array from that and send it to the back end
+
+  //  var checkedTags = [];
+
+  // checkedTags = $(".tag-checkbox:checked").map(function(){
+  //    return this.value;
+  //    console.log(checkedTags);
+  // });
+  var checkedTags = [];
+
+
+  console.log(checkedTags);
+
+
 
 
 
@@ -111,11 +133,11 @@ $(document).ready(function(){
 
     var artworks = (function(){
 
-      var chosenCity = 'boston';
-      var defaultCity = 'boston';
+      var chosenCity = 'Boston';
+      var defaultCity = 'Boston';
 
       var possibleCities = {
-        "Boston": 'boston',
+        "Boston": 'Boston',
         "New York": 'newyork',
         "Chicago": 'chicago',
         "Los Angeles": 'losangeles'
@@ -130,7 +152,15 @@ $(document).ready(function(){
 
     //attempt to make it searchable by city by changing boston to #{}?
     var getArtworks = function(){
-      $.get( "http://localhost:3000/venues/artwork?city=" + chosenCity).done(function(response){
+      var clicked = $('input[type="checkbox"]:checked').map(function(){ return this.value }).get();
+        'widget[]=first-widget&gadget[]=a-gadget&widget[]=another%20widget'
+      var querystring = "http://localhost:3000/artworks/search?city=" + chosenCity + '&';
+      clicked.forEach(function(tag){
+        querystring += 'tag[]=' + tag + '&';
+      });
+
+      querystring = querystring.substring(0, querystring.length - 1);
+      $.get(querystring).done(function(response){
         _renderArtworks(response);
       });
     };
@@ -144,10 +174,11 @@ $(document).ready(function(){
       //extracting the html and putting into handlebars. Handlebars is a bower component, you installed handlebars and bootstrap
       templatingFunction = templatingFunction || Handlebars.compile($('#artwork-index').html());
       console.log($('#artwork-index').html());
+                    debugger;
 
       //the first characters is a key, the second is the value
       var result = templatingFunction({
-        artworks: artworks[0].artworks
+        artworks: artworks
       });
 
       $('#art-images-display').html(result);//.html includes tags...getter and a setter
@@ -170,7 +201,7 @@ $(document).ready(function(){
   $('a').click(function(){
       var chosenCity = $(this).text();
       artworks.recordChosenCity(chosenCity);
-      alert(chosenCity);
+
     });
 
 
