@@ -189,7 +189,7 @@
 
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search by Art Title">
           </div>
           <button type="submit" class="btn btn-default">Find Art</button>
         </form>
@@ -352,11 +352,10 @@
     <script id="artwork-index" type="text/x-handlebars-template">
          {{#each artworks}}
             <div class= "col-xs-12 col-sm-6 col-md-4">
-                // <img class="artwork" src={{"https://s3.amazonaws.com/bostonartgallery/medium/#{object.id}/#{object.image_file_name}"}}/>
-                <h2>{{title}}</h2>
-                <h4>{{artist}}</h4>
-                <p>{{venue}}</p>
-                <p>{{neighborhoods}}</p>
+                <img class="artwork" src={{url}}>
+                <h3>{{title}}</h3>
+                <h1>{{artist}}</h1>
+                <p>{{neighborhood}}</p>
                 <p>{{city}}</p>
                 <p>{{description}}</p>
             </div>

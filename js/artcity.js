@@ -1,8 +1,5 @@
 'use strict';
 
-// var gameRef;
-// var gameRef, gameAuth, player;
-
 //Make sure the document is ready before applying jQuery library
 $(document).ready(function(){
 
@@ -202,6 +199,8 @@ $(document).ready(function(){
       clicked.forEach(function(tag){
         querystring += 'tag[]=' + tag + '&';
       });
+console.log(querystring);
+
 
       querystring = querystring.substring(0, querystring.length - 1);
       $.get(querystring).done(function(response){
