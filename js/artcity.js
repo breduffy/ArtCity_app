@@ -31,6 +31,7 @@ $(document).ready(function(){
       $(".dropdown-btn:first-child").css("background-color", "#f8f8f8").css("color", "#f40e4c");
    });
 
+  //Ajax call for the modal form
     var createArtwork = function(venueId){
       var fd = new FormData();
       fd.append('title', $('#title').val());
