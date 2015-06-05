@@ -29,10 +29,54 @@ $(document).ready(function(){
 
   //Get dropdown button to save selection in the button
    $("#chooseCity-dropdown-menu").on('click', 'li a', function(){
-      $(".btn:first-child").text($(this).text());
-      $(".btn:first-child").val($(this).text());
-      // $(".btn:first-child").css("background-color", "backgroundSecondary-color");
+      $(".dropdown-btn:first-child").text($(this).text());
+      $(".dropdown-btn:first-child").val($(this).text());
+      $(".dropdown-btn:first-child").css("background-color", "#f8f8f8").css("color", "#f40e4c");
    });
+
+    var createArtwork = function(venueId){
+      var fd = new FormData();
+      fd.append('title', $('#title').val());
+      fd.append('artist', $('#artist').val());
+      fd.append('neighborhood', $('#neighborhood').val());
+      fd.append('street', $('#street').val());
+      fd.append('city', $('#city').val());
+      fd.append('description', $('#description').val());
+      fd.append('zip', $('#zip').val());
+      fd.append('image', $('#file')[0].files[0]);
+      $.ajax({
+        url: 'http://localhost:3000/venues/' + venueId + '/artworks',
+        processData: false,
+        cache: false,
+        contentType: false,
+        type: 'POST',
+        data: fd
+      }).done(function(response){
+        console.log(response);
+      });
+    }
+   //Submit form button
+   $("#form-button-submit-art").click(function(){
+      var venue = {venue : {
+        name: $('#venue').val(),
+        street: $('#street').val(),
+        city: $('#city').val(),
+        zip: $('#zip').val(),
+      } };
+      $.ajax({
+        url: 'http://localhost:3000/venues',
+        type: 'POST',
+        data: venue
+      }).done(function(response){
+        createArtwork(response.id);
+      })
+
+
+   });
+
+
+
+
 
    // FIXME: On click of checkbox, get the value of the checkbox
    // Create a JSON Array from that and send it to the back end
@@ -174,7 +218,6 @@ $(document).ready(function(){
       //extracting the html and putting into handlebars. Handlebars is a bower component, you installed handlebars and bootstrap
       templatingFunction = templatingFunction || Handlebars.compile($('#artwork-index').html());
       console.log($('#artwork-index').html());
-                    debugger;
 
       //the first characters is a key, the second is the value
       var result = templatingFunction({

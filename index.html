@@ -53,30 +53,32 @@
               <div class="form-group col-xs-12">
 
                   <div class= "col-xs-6">
-                    <input name="title" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Title">
+                    <input id="title" required data-parsley-minlength="2" data-parsley-trigger="focusout" type="text" class="form-control input-md" placeholder="Title">
 
-                    <input name="artist" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Artist">
+                    <input id="artist" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Artist">
 
-                    <input name="venue" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Venue*">
+                    <input id="venue" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Venue*">
 
-                    <input name="neighborhood" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Neighborhood">
+                    <input id="neighborhood" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Neighborhood">
 
                   </div>
 
                   <div class= "col-xs-6">
 
-                    <input name="street" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Street*">
+                    <input id="street" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Street*">
 
-                    <input name="city" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="City">
+                    <input id="city" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="City">
 
-                    <input name="description" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Description">
+                    <input id="description" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Description">
+
+                    <input id="zip" required data-parsley-minlength="2" data-parsley-trigger="focusout"type="text" class="form-control input-md" placeholder="Description">
                   </div>
 
 
                   <div class="input-group">
                     <span id="upload-art-from-computer" class="input-group-btn">
                       <span class="btn btn-primary btn-file pull-left backgroundPrimary-gray textPrimary-black ">
-                        Upload Image From Computer* <input type="file" multiple>
+                        Upload Image From Computer* <input id='file' type="file" multiple>
                       </span>
                     </span>
                     <input type="text" class="form-control" readonly>
@@ -251,15 +253,15 @@
       <div id="filter-drop-down-fix" class="col-xs-12">
         <h4 class="paddingBottom-md">Art City</h4>
        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="chooseCity-dropdown" data-toggle="dropdown" aria-expanded="true">
+          <button class="btn btn-default dropdown-toggle dropdown-btn" type="button" id="chooseCity-dropdown" data-toggle="dropdown" aria-expanded="true">
           Choose a City
             <span class="caret"></span>
           </button>
           <ul id="chooseCity-dropdown-menu" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Boston</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">New York</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chicago</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Los Angeles</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">Boston</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">New York</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">Chicago</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="javascript:void(0);">Los Angeles</a></li>
           </ul>
         </div>
       </div>
