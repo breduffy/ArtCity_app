@@ -97,10 +97,6 @@ button {
 }
 
 
-.checked{
-  background-color: #f40e4c;
-}
-
 /*File Upload Input*/
 .btn-file {
   position: relative;
