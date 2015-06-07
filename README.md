@@ -86,12 +86,8 @@ Link to Back End of Application: https://github.com/breduffy/ArtCity_api
 # WIREFRAMES
 note: these may not match exactly as they contain plans for further development
 
-https://cloud.githubusercontent.com/assets/8007927/8025666/d6a9313e-0d2b-11e5-916d-877c6331a974.png
-
-https://cloud.githubusercontent.com/assets/8007927/8025667/d6ac501c-0d2b-11e5-92e3-40ce7061b774.png
-
-https://cloud.githubusercontent.com/assets/8007927/8025669/d6ade8be-0d2b-11e5-92cb-f3803a1ed9b8.png
-
-https://cloud.githubusercontent.com/assets/8007927/8025670/d6af1d1a-0d2b-11e5-914f-1dd4965573ce.png
-
-https://cloud.githubusercontent.com/assets/8007927/8025668/d6aca54e-0d2b-11e5-98e4-e84e1290e999.png
+![project 2_art_city_mockups_1](https://cloud.githubusercontent.com/assets/8007927/8025666/d6a9313e-0d2b-11e5-916d-877c6331a974.png)
+![project 2_art_city_mockups_2](https://cloud.githubusercontent.com/assets/8007927/8025667/d6ac501c-0d2b-11e5-92e3-40ce7061b774.png)
+![project 2_art_city_mockups_3](https://cloud.githubusercontent.com/assets/8007927/8025669/d6ade8be-0d2b-11e5-92cb-f3803a1ed9b8.png)
+![project 2_art_city_mockups_4](https://cloud.githubusercontent.com/assets/8007927/8025670/d6af1d1a-0d2b-11e5-914f-1dd4965573ce.png)
+![project 2_art_city_mockups_5](https://cloud.githubusercontent.com/assets/8007927/8025668/d6aca54e-0d2b-11e5-98e4-e84e1290e999.png)
