@@ -5,6 +5,8 @@ Author: Breanne Duffy
 
 Link to Back End of Application: https://github.com/breduffy/ArtCity_api
 
+Front End hosted here: http://breduffy.com/portfolio/artcity/
+
 # USER STORIES
 
 1. A user should be able to search and filter through art in a particular city.
