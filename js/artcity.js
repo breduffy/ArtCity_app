@@ -31,7 +31,9 @@ $(document).ready(function(){
       $(".dropdown-btn:first-child").css("background-color", "#f8f8f8").css("color", "#f40e4c");
    });
 
+
   //Ajax call for the modal form
+  //FIXME: not sure how to implement this for the tag checkboxes???
     var createArtwork = function(venueId){
       var fd = new FormData();
       fd.append('title', $('#title').val());
@@ -53,6 +55,7 @@ $(document).ready(function(){
         console.log(response);
       });
     }
+
    //Submit form button
    $("#form-button-submit-art").click(function(){
       var venue = {venue : {
@@ -69,11 +72,10 @@ $(document).ready(function(){
         createArtwork(response.id);
       })
 
+      //Attempt to make modal close when button clicked
+      // $("#uploadArt").modal("hide");
 
    });
-
-
-
 
 
    // FIXME: On click of checkbox, get the value of the checkbox

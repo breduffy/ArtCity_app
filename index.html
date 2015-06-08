@@ -347,15 +347,15 @@
 
   <!--Begin art images section-->
   <div id= "art-images" class="animatedScroll col-xs-12 backgroundPrimary-gray textSecondary-black padding-xl">
-  <h2>Look at all this sweet art!</h2>
+  <h4>Look at all this sweet art!</h4>
     <div id="art-images-display">
 
-    <!--- your template goes here -->
+    <!--- Handlebars template -->
     <script id="artwork-index" type="text/x-handlebars-template">
          {{#each artworks}}
             <div class= "col-xs-12 col-sm-6 col-md-4">
                 <img class="artwork" src={{url}}>
-                <h3>{{title}}</h3>
+                <h2>{{title}}</h2>
                 <h1>{{artist}}</h1>
                 <p>{{neighborhood}}</p>
                 <p>{{city}}</p>
